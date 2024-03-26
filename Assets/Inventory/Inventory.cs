@@ -15,10 +15,6 @@ public class Inventory : MonoBehaviour
     [SerializeField] private TMP_Text energyAmountText;
     [SerializeField] private TMP_Text crystalAmountText;
 
-    public StationObject currentStation;
-    [SerializeField] private int currentStationIndex = 0;
-
-
     public void AddToInventory(StationObject stationObject)
     {
         stations.Add(stationObject);
@@ -33,15 +29,6 @@ public class Inventory : MonoBehaviour
     {
         energyAmountText.text = $"{energyAmount}";
         crystalAmountText.text = $"{crystalAmount}";
-
-        currentStationIndex += (int)Input.mouseScrollDelta.y;
-        currentStation = stations[currentStationIndex];
-
-        if (currentStationIndex > stations.Count)
-            currentStationIndex = 0;
-
-        else if (currentStationIndex < 0)
-            currentStationIndex = stations.Count;
 
         foreach (var station in stations)
         {

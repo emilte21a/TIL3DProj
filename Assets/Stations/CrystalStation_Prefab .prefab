@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8041430910824730003}
   - component: {fileID: 3108758119647181748}
   - component: {fileID: 6820804068172821050}
+  - component: {fileID: 5896365773783078176}
   m_Layer: 0
   m_Name: 'CrystalStation_Prefab '
   m_TagString: Untagged
@@ -125,3 +126,15 @@ MonoBehaviour:
   upgrade: 1
   damageTextPrefab: {fileID: 6607469317329476069, guid: 45955fd02ffaf2c4bb54c43722ec0e48, type: 3}
   timer: 1
+--- !u!114 &5896365773783078176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4498837861261805647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34e300a11541ec4aaa37f100ceb5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
