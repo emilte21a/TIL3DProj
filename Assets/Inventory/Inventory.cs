@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,10 +11,17 @@ public class Inventory : MonoBehaviour
     public int energyAmount = 0;
     public int crystalAmount = 0;
 
+    [Header("Button")]
+    public Button editButton;
 
     [Header("Text Displays")]
     [SerializeField] private TMP_Text energyAmountText;
     [SerializeField] private TMP_Text crystalAmountText;
+
+    private void Start()
+    {
+        energyAmount = 50;
+    }
 
     public void AddToInventory(StationObject stationObject)
     {
@@ -44,7 +52,24 @@ public class Inventory : MonoBehaviour
                     crystalAmount += station.increasePerSecond * station.upgrade;
                 }
             }
+        }
 
+        editButton.onClick.AddListener(EnableEditMode);
+    }
+
+    private void EnableEditMode()
+    {
+        foreach (StationObject station in stations)
+        {
+            station.mode = Mode.editMode;
+        }
+    }
+
+    public void DisableEditMode()
+    {
+        foreach (StationObject station in stations)
+        {
+            station.mode = Mode.buildMode;
         }
     }
 }

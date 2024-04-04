@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 8482416811566372014}
   - component: {fileID: 8221089404707240444}
   - component: {fileID: -6011499494616155007}
+  - component: {fileID: 1984489809340573000}
   m_Layer: 0
   m_Name: EnergyStation_Prefab
   m_TagString: Untagged
@@ -238,7 +239,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2899f2ecac66dc64bb29bfd90e8221cc, type: 2}
+  - {fileID: 2100000, guid: 8f31fadcdf8823e4985223cf60be12e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -298,8 +299,9 @@ MonoBehaviour:
   station: {fileID: 11400000, guid: c91ee0ca5c81ecf49a6b5fd30572bc41, type: 2}
   increasePerSecond: 1
   upgrade: 1
-  damageTextPrefab: {fileID: 0}
+  damageTextPrefab: {fileID: 6607469317329476069, guid: 45955fd02ffaf2c4bb54c43722ec0e48, type: 3}
   timer: 1
+  mode: 1
 --- !u!114 &-6011499494616155007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,5 +312,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f34e300a11541ec4aaa37f100ceb5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1984489809340573000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9005213982923954110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8287bf7aa6ce340489076389e5e8fbe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

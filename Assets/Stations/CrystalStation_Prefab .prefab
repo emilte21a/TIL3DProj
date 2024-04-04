@@ -125,7 +125,12 @@ MonoBehaviour:
   increasePerSecond: 1
   upgrade: 1
   damageTextPrefab: {fileID: 6607469317329476069, guid: 45955fd02ffaf2c4bb54c43722ec0e48, type: 3}
+  stationOption: {fileID: 1363144140577459610, guid: caec531a328ad174cbb474b509867143, type: 3}
+  infoText: {fileID: 0}
+  upgradeButton: {fileID: 0}
+  editButton: {fileID: 0}
   timer: 1
+  stationPhase: 0
 --- !u!114 &5896365773783078176
 MonoBehaviour:
   m_ObjectHideFlags: 0

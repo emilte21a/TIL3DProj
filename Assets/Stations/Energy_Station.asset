@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Energy_Station
   m_EditorClassIdentifier: 
   name: Energy Station
-  cost: 50
+  cost: 10
   valueType: 1

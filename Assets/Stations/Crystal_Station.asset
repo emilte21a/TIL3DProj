@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Crystal_Station
   m_EditorClassIdentifier: 
   name: Crystal Station
-  cost: 150
+  cost: 50
   valueType: 0

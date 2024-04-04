@@ -14,34 +14,24 @@ public class BuildingSystem : MonoBehaviour
     public GridLayout gridLayout;
     private Grid grid;
 
+    [Header("Tiles")]
+
+    [SerializeField] Tile defaultTile;
+    [SerializeField] Tile freeTile;
+    [SerializeField] Tile occupiedTile;
+
     [SerializeField] private Tilemap tilemap;
 
     public PlaceableObject objectToPlace;
 
-    public List<GameObject> store;
 
-    [SerializeField] private int currentStationIndex = 0;
+
+    // [SerializeField] private int currentStationIndex = 0;
 
     private void Start()
     {
         current = this;
         grid = gridLayout.gameObject.transform.GetComponent<Grid>();
-    }
-
-    void Update()
-    {
-        currentStationIndex += (int)Input.mouseScrollDelta.y;
-
-        if (currentStationIndex > store.Count)
-            currentStationIndex = 0;
-
-        else if (currentStationIndex < 0)
-            currentStationIndex = store.Count;
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            InitalizeWithObject(store[currentStationIndex]);
-        }
     }
 
     public static Vector3 GetWorldMousePosition()
@@ -67,7 +57,7 @@ public class BuildingSystem : MonoBehaviour
     {
         Vector3 position = SnapCoordinateTo(Vector3.zero);
         GameObject obj = Instantiate(prefab, position, Quaternion.identity);
-        //objectToPlace = obj.GetComponent<PlaceableObject>();
-        obj.AddComponent<ObjectDrag>();
+        objectToPlace = obj.GetComponent<PlaceableObject>();
+        inventory.AddToInventory(obj.GetComponent<StationObject>());
     }
 }

@@ -102,9 +102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '+1
-
-'
+  m_text: +1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 871271a98127a274aba2786a74961e65, type: 2}
   m_sharedMaterial: {fileID: -7454050442285953166, guid: 871271a98127a274aba2786a74961e65, type: 2}
@@ -221,4 +219,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d740191d602bd42ba2580f230128e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
