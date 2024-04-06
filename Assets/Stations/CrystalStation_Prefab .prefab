@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3108758119647181748}
   - component: {fileID: 6820804068172821050}
   - component: {fileID: 5896365773783078176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'CrystalStation_Prefab '
-  m_TagString: Untagged
+  m_TagString: Station
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,12 +125,8 @@ MonoBehaviour:
   increasePerSecond: 1
   upgrade: 1
   damageTextPrefab: {fileID: 6607469317329476069, guid: 45955fd02ffaf2c4bb54c43722ec0e48, type: 3}
-  stationOption: {fileID: 1363144140577459610, guid: caec531a328ad174cbb474b509867143, type: 3}
-  infoText: {fileID: 0}
-  upgradeButton: {fileID: 0}
-  editButton: {fileID: 0}
   timer: 1
-  stationPhase: 0
+  mode: 1
 --- !u!114 &5896365773783078176
 MonoBehaviour:
   m_ObjectHideFlags: 0

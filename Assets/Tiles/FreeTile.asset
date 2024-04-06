@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: FreeTile
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 86fbb929a2332224abb7befd075fa44d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2c91e9a87020b7478790a325c5d6dad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

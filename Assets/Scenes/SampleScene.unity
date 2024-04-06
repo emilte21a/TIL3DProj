@@ -20502,7 +20502,7 @@ Transform:
   m_GameObject: {fileID: 1198045284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.18, z: 0}
+  m_LocalPosition: {x: 0, y: -0.16, z: 0}
   m_LocalScale: {x: 11.04, y: 11.04, z: 11.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -21219,6 +21219,7 @@ MonoBehaviour:
   editButton: {fileID: 55402193}
   energyAmountText: {fileID: 1814266093}
   crystalAmountText: {fileID: 878665313}
+  editModeActive: 0
 --- !u!1 &1507224400
 GameObject:
   m_ObjectHideFlags: 0
@@ -21419,7 +21420,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 1458118794}
+  stationLayer:
+    serializedVersion: 2
+    m_Bits: 128
   gridLayout: {fileID: 1603135146}
+  defaultTile: {fileID: 11400000, guid: 2ae51803006a28b409e9a5e01c24f882, type: 2}
+  freeTile: {fileID: 11400000, guid: 86efaab6925e094418859724036fec3b, type: 2}
+  occupiedTile: {fileID: 11400000, guid: e3579d2dd5ba1d74b84a1a666ff75109, type: 2}
   tilemap: {fileID: 891853160}
   objectToPlace: {fileID: 0}
 --- !u!1 &1603135144

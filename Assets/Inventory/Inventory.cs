@@ -18,6 +18,8 @@ public class Inventory : MonoBehaviour
     [SerializeField] private TMP_Text energyAmountText;
     [SerializeField] private TMP_Text crystalAmountText;
 
+    public bool editModeActive = false;
+
     private void Start()
     {
         energyAmount = 50;
@@ -62,6 +64,7 @@ public class Inventory : MonoBehaviour
         foreach (StationObject station in stations)
         {
             station.mode = Mode.editMode;
+            editModeActive = true;
         }
     }
 
@@ -70,6 +73,7 @@ public class Inventory : MonoBehaviour
         foreach (StationObject station in stations)
         {
             station.mode = Mode.buildMode;
+            editModeActive = false;
         }
     }
 }
