@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using OpenCover.Framework.Model;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class Inventory : MonoBehaviour
     public List<StationObject> stations;
     public int energyAmount = 0;
     public int crystalAmount = 0;
+
+    [SerializeField] public Dictionary<ValueType, int> stationValues = new Dictionary<ValueType, int>();
 
     [Header("Button")]
     public Button editButton;
@@ -22,7 +25,8 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        energyAmount = 50;
+        stationValues.Add(ValueType.Energy, 50);
+        stationValues.Add(ValueType.Crystal, 0);
     }
 
     public void AddToInventory(StationObject stationObject)
@@ -37,21 +41,20 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        energyAmountText.text = $"{energyAmount}";
-        crystalAmountText.text = $"{crystalAmount}";
+        energyAmountText.text = $"{stationValues[ValueType.Energy]}";
+        crystalAmountText.text = $"{stationValues[ValueType.Crystal]}";
+
 
         foreach (var station in stations)
         {
-            if (station.timer <= 0)
+            foreach (var KVP in stationValues)
             {
-                if (station.station.valueType == ValueType.Energy)
+                if (station.timer <= 0)
                 {
-                    energyAmount += station.increasePerSecond * station.upgrade;
-                }
-
-                else if (station.station.valueType == ValueType.Crystal)
-                {
-                    crystalAmount += station.increasePerSecond * station.upgrade;
+                    if (station.station.valueType.Equals(KVP.Key))
+                    {
+                        stationValues[KVP.Key] += station.increasePerSecond * station.upgrade;
+                    }
                 }
             }
         }
@@ -63,7 +66,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (StationObject station in stations)
         {
-            station.mode = Mode.editMode;
+            station.currentMode = Mode.editMode;
             editModeActive = true;
         }
     }
@@ -72,7 +75,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (StationObject station in stations)
         {
-            station.mode = Mode.buildMode;
+            station.currentMode = Mode.buildMode;
             editModeActive = false;
         }
     }

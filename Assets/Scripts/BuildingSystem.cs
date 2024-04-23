@@ -60,27 +60,32 @@ public class BuildingSystem : MonoBehaviour
     public void InitalizeWithObject(GameObject prefab)
     {
         Vector3 position = SnapCoordinateTo(Vector3.zero);
+
+        if (IsTileOccupied(gridLayout.WorldToCell(position)))
+        {
+            return;
+        }
         GameObject obj = Instantiate(prefab, position, Quaternion.identity);
         objectToPlace = obj.GetComponent<PlaceableObject>();
         inventory.AddToInventory(obj.GetComponent<StationObject>());
     }
 
-    private bool IsTileOccupied(Vector3Int position)
+    public bool IsTileOccupied(Vector3Int position)
     {
         Vector3 cellCenter = grid.GetCellCenterWorld(position);
 
         if (Physics.CheckBox(cellCenter, new Vector3(1, 1, 1), Quaternion.identity, stationLayer))
             return true;
-        
+
         else
             return false;
-        
+
     }
 
     public void UpdateTilemap()
     {
         BoundsInt bounds = tilemap.cellBounds;
-        
+
         for (int x = bounds.xMin; x < bounds.xMax; x++)
         {
             for (int y = bounds.yMin; y < bounds.yMax; y++)
@@ -97,7 +102,7 @@ public class BuildingSystem : MonoBehaviour
                             tilemap.SetTile(pos, occupiedTile);
                         }
                     }
-                    else 
+                    else
                     {
                         if (tile != freeTile)
                         {

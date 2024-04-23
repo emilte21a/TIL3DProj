@@ -11,7 +11,6 @@ public class StationObject : MonoBehaviour
 {
     public Station station;
     public int increasePerSecond = 1;
-
     public int upgrade = 1;
 
     public GameObject damageTextPrefab;
@@ -20,7 +19,7 @@ public class StationObject : MonoBehaviour
 
     private float _maxTime = 2;
 
-    public Mode mode = Mode.buildMode;
+    public Mode currentMode = Mode.buildMode;
 
     private void Update()
     {
@@ -34,23 +33,27 @@ public class StationObject : MonoBehaviour
         timer -= Time.deltaTime;
     }
 
+    private Vector3 _lastMousePos;
 
-    private Vector3 offset;
+    private Vector3 positionOffset;
 
     private void OnMouseDown()
     {
-        if (mode == Mode.editMode)
+        if (currentMode == Mode.editMode)
         {
-            offset = transform.position - BuildingSystem.GetWorldMousePosition();
+            positionOffset = transform.position - BuildingSystem.GetWorldMousePosition();
         }
     }
 
     private void OnMouseDrag()
     {
-        if (mode == Mode.editMode)
+        if (currentMode == Mode.editMode)
         {
-            Vector3 pos = BuildingSystem.GetWorldMousePosition() + offset;
-            transform.position = BuildingSystem.current.SnapCoordinateTo(pos);
+            Vector3 pos = BuildingSystem.GetWorldMousePosition() + positionOffset;
+            if (!BuildingSystem.current.IsTileOccupied(BuildingSystem.current.gridLayout.WorldToCell(pos)))
+            {
+                transform.position = BuildingSystem.current.SnapCoordinateTo(pos);
+            }
         }
     }
 }
